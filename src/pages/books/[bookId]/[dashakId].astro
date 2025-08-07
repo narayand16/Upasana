@@ -1,0 +1,109 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '@/layouts/Layout.astro';
+import { Breadcrumbs } from '@/lib/components';
+import type { BookEntry, DashakEntry, SamaEntry } from '../../../types';
+import type { BreadcrumbItem } from '@/lib/components';
+
+export async function getStaticPaths() {
+  const books = await getCollection('books');
+  const dashaks = await getCollection('dashaks');
+  
+  return dashaks.map(dashak => {
+    const book = books.find(book => book.id === dashak.data.bookId);
+    
+    return {
+      params: { 
+        bookId: dashak.data.bookId,
+        dashakId: dashak.id
+      },
+      props: { 
+        dashak,
+        book
+      },
+    };
+  });
+}
+
+// Page-specific props interface
+interface DashakPageProps {
+  dashak: DashakEntry;
+  book: BookEntry;
+}
+
+const { dashak, book } = Astro.props as DashakPageProps;
+const samasEntries: SamaEntry[] = await getCollection(
+  'samas', 
+  (sama) => dashak.data.samas.includes(sama.id)
+);
+
+// Sort samas by number
+samasEntries.sort((a, b) => a.data.number - b.data.number);
+
+// Breadcrumb items
+const breadcrumbItems = [
+  { label: 'Home', path: '/' },
+  { label: book.data.title, path: `/books/${book.id}` },
+  { label: dashak.data.title, path: `/books/${book.id}/${dashak.id}` },
+];
+---
+
+<Layout title={`${dashak.data.title} - ${book.data.title} - Upasana`}>
+  <div class="bg-gradient-to-br from-purple-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 min-h-screen">
+    <div class="container mx-auto px-4 py-6">
+      <Breadcrumbs items={breadcrumbItems} client:load />
+      
+      <header class="mb-8">
+        <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1">
+          {dashak.data.title}
+        </h1>
+        <h2 class="text-xl md:text-2xl font-devanagari text-primary-600 dark:text-primary-400 mb-4">
+          {dashak.data.titleDevanagari}
+        </h2>
+        {dashak.data.description && (
+          <p class="text-gray-700 dark:text-gray-300 mb-2">
+            {dashak.data.description}
+          </p>
+        )}
+        <div class="text-sm text-gray-600 dark:text-gray-400">
+          {samasEntries.length} samas
+        </div>
+      </header>
+      
+      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md">
+        <div class="divide-y divide-gray-200 dark:divide-gray-700">
+          {samasEntries.map((sama, index) => (
+            <a 
+              href={`/books/${book.id}/${dashak.id}/${sama.id}`}
+              class="block p-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition duration-150"
+            >
+              <div class="flex items-center">
+                <div class="flex-shrink-0 w-10 h-10 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full flex items-center justify-center mr-4">
+                  <span class="font-medium">{sama.data.number}</span>
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+                    {sama.data.title}
+                  </h3>
+                  <h4 class="text-md font-devanagari text-primary-600 dark:text-primary-400">
+                    {sama.data.titleDevanagari}
+                  </h4>
+                  {sama.data.description && (
+                    <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
+                      {sama.data.description}
+                    </p>
+                  )}
+                </div>
+                <div class="flex-shrink-0 text-gray-400 dark:text-gray-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
