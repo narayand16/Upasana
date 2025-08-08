@@ -2,7 +2,8 @@
 import { getCollection } from 'astro:content';
 import Layout from '@/layouts/Layout.astro';
 import { Breadcrumbs } from '@/lib/components';
-import type { BookEntry, DashakEntry, SamaEntry } from '@/types';
+import { getCleanId } from '@/lib/utils';
+import type { BookEntry, DashakEntry, SamasEntry } from '@/types/collections';
 
 export async function getStaticPaths() {
   const books = await getCollection('books');
@@ -32,12 +33,10 @@ interface DashakPageProps {
 
 const { dashak, book } = Astro.props as DashakPageProps;
 
-const samasEntries: SamaEntry[] = await getCollection(
-  'samas', 
-  (sama) => {
-    // Remove .md extension from sama.id to match the IDs in dashak.data.samas
-    const samaIdWithoutExtension = sama.id.replace(/\.md$/, '');
-    return dashak.data.samas.includes(samaIdWithoutExtension);
+const samasEntries: SamasEntry[] = await getCollection(
+  'samas', (samas) => {
+    // Use utility function to get clean ID for matching
+    return dashak.data.samas.includes(getCleanId(samas.id));
   }
 );
 
@@ -76,25 +75,25 @@ const breadcrumbItems = [
       
       <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md">
         <div class="divide-y divide-gray-200 dark:divide-gray-700">
-          {samasEntries.map((sama, index) => (
+          {samasEntries.map((samas, index) => (
             <a 
-              href={`/books/${book.id}/${dashak.id}/${sama.id}`}
+              href={`/books/${book.id}/${dashak.id}/${getCleanId(samas.id)}`}
               class="block p-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition duration-150"
             >
               <div class="flex items-center">
                 <div class="flex-shrink-0 w-10 h-10 bg-primary-100 dark:bg-primary-900 text-primary-700 dark:text-primary-300 rounded-full flex items-center justify-center mr-4">
-                  <span class="font-medium">{sama.data.number}</span>
+                  <span class="font-medium">{samas.data.number}</span>
                 </div>
                 <div class="flex-1">
                   <h3 class="text-lg font-medium text-gray-900 dark:text-white">
-                    {sama.data.title}
+                    {samas.data.title}
                   </h3>
                   <h4 class="text-md font-devanagari text-primary-600 dark:text-primary-400">
-                    {sama.data.titleDevanagari}
+                    {samas.data.titleDevanagari}
                   </h4>
-                  {sama.data.description && (
+                  {samas.data.description && (
                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-300">
-                      {sama.data.description}
+                      {samas.data.description}
                     </p>
                   )}
                 </div>

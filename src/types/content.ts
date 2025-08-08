@@ -20,7 +20,7 @@ export interface Dashak {
   samas: string[]; // IDs of samas in this dashak
 }
 
-export interface Sama {
+export interface Samas {
   dashakId: string;
   title: string;
   titleDevanagari: string;

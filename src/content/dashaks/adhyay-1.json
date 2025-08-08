@@ -4,5 +4,9 @@
   "titleDevanagari": "अध्याय १: अर्जुन विषाद योग",
   "number": 1,
   "description": "The Yoga of Arjuna's Grief",
-  "samas": ["gita-adhyay-1-sloka-1", "gita-adhyay-1-sloka-2", "gita-adhyay-1-sloka-3"]
+  "samas": [
+    "gita-adhyay-1-sloka-1",
+    "gita-adhyay-1-sloka-2",
+    "gita-adhyay-1-sloka-3"
+  ]
 }

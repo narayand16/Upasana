@@ -1,0 +1,37 @@
+---
+dashakId: "dashak-6"
+title: "Samas 9"
+titleDevanagari: "समा ९"
+number: 9
+description: "Samas 9 from Dashak 6 of Shrimat Dasbodh"
+---
+
+## समा ९ - दशक ६
+
+<!-- TODO: Add the actual Sanskrit/Marathi content here -->
+
+**Placeholder Content - Dashak 6, Samas 9**
+
+This is a placeholder for the actual content of Samas 9 from Dashak 6 of Shrimat Dasbodh by Sant Ramdas Swami.
+
+### Instructions for Content Addition:
+1. Replace this placeholder with the actual Sanskrit/Marathi verses
+2. Add English translation if needed
+3. Include any commentary or explanations
+4. Use proper Devanagari formatting
+
+### Content Structure Suggestion:
+```
+## समा ९
+
+[Original Sanskrit/Marathi verse in Devanagari]
+
+_[Translation in preferred language]_
+
+[Any commentary or explanation]
+```
+
+---
+**Book:** श्रीमद् दासबोध (Shrimat Dasbodh)  
+**Author:** संत रामदास स्वामी (Sant Ramdas Swami)  
+**Dashak:** 6 | **Sama:** 9

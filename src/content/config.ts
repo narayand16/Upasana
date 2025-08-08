@@ -1,5 +1,5 @@
 import { defineCollection, z } from 'astro:content';
-import type { Book, Dashak, Sama } from '@/types';
+import type { Book, Dashak, Samas } from '../types';
 
 // Define schema for books
 const booksCollection = defineCollection({
@@ -37,7 +37,7 @@ const samasCollection = defineCollection({
     titleDevanagari: z.string(),
     number: z.number(),
     description: z.string().optional(),
-  }) satisfies z.ZodType<Sama>,
+  }) satisfies z.ZodType<Samas>,
 });
 
 export const collections = {

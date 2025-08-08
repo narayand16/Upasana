@@ -2,7 +2,8 @@
 import { getCollection } from 'astro:content';
 import Layout from '@/layouts/Layout.astro';
 import { Breadcrumbs, ReadingControls } from '@/lib/components';
-import type { BookEntry, DashakEntry, SamaEntry } from '@/types';
+import { getCleanId } from '@/lib/utils';
+import type { BookEntry, DashakEntry, SamasEntry } from '@/types/collections';
 import type { BreadcrumbItem } from '@/lib/components';
 
 export async function getStaticPaths() {
@@ -10,22 +11,22 @@ export async function getStaticPaths() {
   const dashaks = await getCollection('dashaks');
   const samas = await getCollection('samas');
   
-  return samas.map(sama => {
-    const dashak = dashaks.find(dashak => dashak.id === sama.data.dashakId);
+  return samas.map(samas => {
+    const dashak = dashaks.find(dashak => dashak.id === samas.data.dashakId);
     const book = books.find(book => book.id === dashak?.data.bookId);
     
     if (!dashak || !book) {
-      throw new Error(`Could not find dashak ${sama.data.dashakId} or book for sama ${sama.id}`);
+      throw new Error(`Could not find dashak ${samas.data.dashakId} or book for samas ${samas.id}`);
     }
     
     return {
       params: { 
         bookId: dashak.data.bookId,
         dashakId: dashak.id,
-        samaId: sama.id
+        samasId: getCleanId(samas.id)
       },
       props: { 
-        sama,
+        samas,
         dashak,
         book
       },
@@ -34,25 +35,25 @@ export async function getStaticPaths() {
 }
 
 // Page-specific props interface
-interface SamaPageProps {
-  sama: SamaEntry;
+interface SamasPageProps {
+  samas: SamasEntry;
   dashak: DashakEntry;
   book: BookEntry;
 }
 
-const { sama, dashak, book } = Astro.props as SamaPageProps;
-const { Content } = await sama.render();
+const { samas, dashak, book } = Astro.props as SamasPageProps;
+const { Content } = await samas.render();
 
 // Breadcrumb items
 const breadcrumbItems: BreadcrumbItem[] = [
   { label: 'Home', path: '/' },
   { label: book.data.title, path: `/books/${book.id}` },
   { label: dashak.data.title, path: `/books/${book.id}/${dashak.id}` },
-  { label: sama.data.title, path: `/books/${book.id}/${dashak.id}/${sama.id}` },
+  { label: samas.data.title, path: `/books/${book.id}/${dashak.id}/${getCleanId(samas.id)}` },
 ];
 ---
 
-<Layout title={`${sama.data.title} - ${dashak.data.title} - ${book.data.title} - Upasana`}>
+<Layout title={`${samas.data.title} - ${dashak.data.title} - ${book.data.title} - Upasana`}>
   <div class="bg-gradient-to-br from-purple-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 min-h-screen">
     <div class="container mx-auto px-4 py-6">
       <Breadcrumbs items={breadcrumbItems} client:load />
@@ -60,14 +61,14 @@ const breadcrumbItems: BreadcrumbItem[] = [
       <div class="reading-container transition-all duration-300" id="reading-container">
         <header class="mb-6">
           <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1">
-            {sama.data.title}
+            {samas.data.title}
           </h1>
           <h2 class="text-xl md:text-2xl font-devanagari text-primary-600 dark:text-primary-400 mb-4">
-            {sama.data.titleDevanagari}
+            {samas.data.titleDevanagari}
           </h2>
-          {sama.data.description && (
+          {samas.data.description && (
             <p class="text-gray-700 dark:text-gray-300 mb-2">
-              {sama.data.description}
+              {samas.data.description}
             </p>
           )}
         </header>
