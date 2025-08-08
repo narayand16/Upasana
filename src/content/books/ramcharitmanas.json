@@ -1,9 +1,0 @@
-{
-  "title": "Ramcharitmanas",
-  "titleDevanagari": "रामचरितमानस",
-  "description": "The Ramcharitmanas is an epic poem in the Awadhi language, composed by the 16th-century Indian bhakti poet Tulsidas.",
-  "author": "Tulsidas",
-  "coverImage": "/images/books/book-sample-2.png",
-  "sections": ["balkand", "ayodhyakand", "aranyakand", "kishkindhakand", "sundarkand", "lankakand", "uttarkand"],
-  "sectionType": "kand"
-}
