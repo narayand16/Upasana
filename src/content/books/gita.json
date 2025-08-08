@@ -1,9 +1,0 @@
-{
-  "title": "Gita",
-  "titleDevanagari": "श्रीमद्भगवद्गीता",
-  "description": "The Bhagavad Gita is a 700-verse Hindu scripture that is part of the Indian epic Mahabharata.",
-  "author": "Vyasa",
-  "coverImage": "/images/books/book-sample.jpg",
-  "sections": ["adhyay-1", "adhyay-2", "adhyay-3", "adhyay-4", "adhyay-5", "adhyay-6", "adhyay-7", "adhyay-8", "adhyay-9", "adhyay-10", "adhyay-11", "adhyay-12", "adhyay-13", "adhyay-14", "adhyay-15", "adhyay-16", "adhyay-17", "adhyay-18"],
-  "sectionType": "adhyay"
-}
