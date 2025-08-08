@@ -6,7 +6,8 @@
     "verbatimModuleSyntax": true,
     "paths": {
       "@/lib/*": ["src/lib/*"],
-      "@/layouts/*": ["src/layouts/*"]
+      "@/layouts/*": ["src/layouts/*"],
+      "@/types/*": ["src/types/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"

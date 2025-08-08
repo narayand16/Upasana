@@ -26,16 +26,40 @@
 }
 
 /* Reading view utilities */
-.reading-container.rotate-landscape {
-  transform: rotate(90deg);
-  transform-origin: center;
-  max-width: 100vh;
-  min-height: 100vw;
-  overflow-x: auto;
-  margin: 0 auto;
-}
-
 .reading-content {
   font-size: 20px;
   line-height: 1.8;
+}
+
+/* Landscape mode for entire page */
+body.landscape-mode {
+  overflow: hidden;
+}
+
+body.landscape-mode .bg-gradient-to-br {
+  transform: rotate(90deg);
+  transform-origin: center center;
+  width: 100vh;
+  height: 100vw;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -50vh;
+  margin-top: -50vw;
+}
+
+body.landscape-mode .container {
+  height: 100vw;
+  max-width: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Adjust reading controls position in landscape mode */
+body.landscape-mode .reading-controls {
+  position: fixed;
+  bottom: 4rem;
+  right: 4rem;
+  transform: rotate(-90deg);
+  transform-origin: center;
 }

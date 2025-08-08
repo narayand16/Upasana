@@ -2,8 +2,8 @@
 import { getCollection } from 'astro:content';
 import Layout from '@/layouts/Layout.astro';
 import { Breadcrumbs, ReadingControls } from '@/lib/components';
-import type { BookEntry, DashakEntry, SamaEntry } from '../../../../types';
-import type { BreadcrumbItem, ReadingControlsProps } from '@/lib/components';
+import type { BookEntry, DashakEntry, SamaEntry } from '@/types';
+import type { BreadcrumbItem } from '@/lib/components';
 
 export async function getStaticPaths() {
   const books = await getCollection('books');
@@ -78,18 +78,6 @@ const breadcrumbItems: BreadcrumbItem[] = [
       </div>
       
       <ReadingControls 
-        onFontSizeChange={(size) => {
-          const content = document.getElementById('reading-content');
-          if (content) {
-            content.style.fontSize = `${size}px`;
-          }
-        }}
-        onRotateScreen={() => {
-          const container = document.getElementById('reading-container');
-          if (container) {
-            container.classList.toggle('rotate-landscape');
-          }
-        }}
         currentFontSize={20}
         isScreenRotated={false}
         client:load

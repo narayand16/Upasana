@@ -1,0 +1,10 @@
+{
+    "id": "shrimat-dasbodh",
+    "title": "Shrimat Dasbodh",
+    "titleDevanagari": "श्रीमद् दासबोध",
+    "description": "A spiritual classic by Sant Ramdas Swami, exploring the nature of reality and the self.",
+    "author": "Sant Ramdas Swami",
+    "coverImage": "/images/books/book-sample.jpg",
+    "sections": ["dashak-1", "dashak-2", "dashak-3", "dashak-4", "dashak-5", "dashak-6", "dashak-7", "dashak-8", "dashak-9", "dashak-10", "dashak-11", "dashak-12", "dashak-13", "dashak-14", "dashak-15", "dashak-16", "dashak-17", "dashak-18", "dashak-19", "dashak-20"],
+    "sectionType": "dashak"
+}

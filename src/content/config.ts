@@ -1,5 +1,5 @@
 import { defineCollection, z } from 'astro:content';
-import type { Book, Dashak, Sama } from '../types';
+import type { Book, Dashak, Sama } from '@/types';
 
 // Define schema for books
 const booksCollection = defineCollection({

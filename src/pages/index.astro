@@ -1,38 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
-import Layout from '@/layouts/Layout.astro';
-import { BookCard } from '@/lib/components';
-import type { BookEntry } from '../types';
+import type { BookEntry } from '@/types';
+import Library from '@/lib/library.astro';
 
 // Fetch all books
 const books: BookEntry[] = await getCollection('books');
 ---
 
-<Layout title="Upasana - Sacred Texts Library">
-  <main class="bg-gradient-to-br from-purple-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 min-h-screen">
-    <div class="container mx-auto px-4 py-8">
-      <header class="text-center mb-10">
-        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">
-          Upasana
-        </h1>
-        <p class="text-gray-600 dark:text-gray-300">
-          A digital library of sacred texts
-        </p>
-      </header>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {books.map((book) => (
-          <BookCard
-            id={book.id}
-            title={book.data.title}
-            titleDevanagari={book.data.titleDevanagari}
-            description={book.data.description}
-            author={book.data.author}
-            coverImage={book.data.coverImage}
-            client:load
-          />
-        ))}
-      </div>
-    </div>
-  </main>
-</Layout>
+<Library books={books} />
