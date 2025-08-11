@@ -1,9 +1,9 @@
 ---
 dashakId: "dashak-1"
 title: "Samas 10"
-titleDevanagari: "समास 10 - ॥ दशक पहिला समाप्त"
+titleDevanagari: "समास 10 - नरदेहस्तवननिरूपण"
 number: 10
-description: "॥ दशक पहिला समाप्त"
+description: "नरदेहस्तवननिरूपण"
 ---
 
 ## समास 10 - दशक १
