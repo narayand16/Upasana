@@ -1,34 +1,36 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from '@/layouts/Layout.astro';
-import { Breadcrumbs, ReadingControls } from '@/lib/components';
-import { getCleanId } from '@/lib/utils';
-import type { BookEntry, DashakEntry, SamasEntry } from '@/types/collections';
-import type { BreadcrumbItem } from '@/lib/components';
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import { Breadcrumbs, ReadingControls } from "@/lib/components";
+import { getCleanId } from "@/lib/utils";
+import type { BookEntry, DashakEntry, SamasEntry } from "@/types/collections";
+import type { BreadcrumbItem } from "@/lib/components";
 
 export async function getStaticPaths() {
-  const books = await getCollection('books');
-  const dashaks = await getCollection('dashaks');
-  const samas = await getCollection('samas');
-  
-  return samas.map(samas => {
-    const dashak = dashaks.find(dashak => dashak.id === samas.data.dashakId);
-    const book = books.find(book => book.id === dashak?.data.bookId);
-    
+  const books = await getCollection("books");
+  const dashaks = await getCollection("dashaks");
+  const samas = await getCollection("samas");
+
+  return samas.map((samas) => {
+    const dashak = dashaks.find((dashak) => dashak.id === samas.data.dashakId);
+    const book = books.find((book) => book.id === dashak?.data.bookId);
+
     if (!dashak || !book) {
-      throw new Error(`Could not find dashak ${samas.data.dashakId} or book for samas ${samas.id}`);
+      throw new Error(
+        `Could not find dashak ${samas.data.dashakId} or book for samas ${samas.id}`,
+      );
     }
-    
+
     return {
-      params: { 
+      params: {
         bookId: dashak.data.bookId,
         dashakId: dashak.id,
-        samasId: getCleanId(samas.id)
+        samasId: getCleanId(samas.id),
       },
-      props: { 
+      props: {
         samas,
         dashak,
-        book
+        book,
       },
     };
   });
@@ -46,43 +48,58 @@ const { Content } = await samas.render();
 
 // Breadcrumb items
 const breadcrumbItems: BreadcrumbItem[] = [
-  { label: 'Home', path: '/' },
+  { label: "Home", path: "/" },
   { label: book.data.title, path: `/books/${book.id}` },
   { label: dashak.data.title, path: `/books/${book.id}/${dashak.id}` },
-  { label: samas.data.title, path: `/books/${book.id}/${dashak.id}/${getCleanId(samas.id)}` },
+  {
+    label: samas.data.title,
+    path: `/books/${book.id}/${dashak.id}/${getCleanId(samas.id)}`,
+  },
 ];
 ---
 
-<Layout title={`${samas.data.title} - ${dashak.data.title} - ${book.data.title} - Upasana`}>
-  <div class="bg-gradient-to-br from-purple-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 min-h-screen">
+<Layout
+  title={`${samas.data.title} - ${dashak.data.title} - ${book.data.title} - Upasana`}
+>
+  <div
+    class="bg-gradient-to-br from-purple-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 min-h-screen"
+  >
     <div class="container mx-auto px-4 py-6">
       <Breadcrumbs items={breadcrumbItems} client:load />
-      
-      <div class="reading-container transition-all duration-300" id="reading-container">
+
+      <div
+        class="reading-container transition-all duration-300"
+        id="reading-container"
+      >
         <header class="mb-6">
-          <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1">
+          <h1
+            class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1"
+          >
             {samas.data.title}
           </h1>
-          <h2 class="text-xl md:text-2xl font-devanagari text-primary-600 dark:text-primary-400 mb-4">
+          <h2
+            class="text-xl md:text-2xl font-devanagari text-primary-600 dark:text-primary-400 mb-4"
+          >
             {samas.data.titleDevanagari}
           </h2>
-          {samas.data.description && (
-            <p class="text-gray-700 dark:text-gray-300 mb-2">
-              {samas.data.description}
-            </p>
-          )}
+          {
+            samas.data.description && (
+              <p class="text-gray-700 dark:text-gray-300 mb-2">
+                {samas.data.description}
+              </p>
+            )
+          }
         </header>
-        
-        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 md:p-8 mb-8 prose prose-lg dark:prose-invert max-w-none font-devanagari reading-content" id="reading-content">
+
+        <div
+          class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 md:p-8 mb-8 prose prose-lg dark:prose-invert max-w-none font-devanagari reading-content"
+          id="reading-content"
+        >
           <Content />
         </div>
       </div>
-      
-      <ReadingControls 
-        currentFontSize={20}
-        isScreenRotated={false}
-        client:load
-      />
+
+      <ReadingControls client:load />
     </div>
   </div>
 </Layout>
@@ -91,39 +108,3 @@ const breadcrumbItems: BreadcrumbItem[] = [
   /* Note: This style section is now using class composition */
   /* We've moved most styles to utilities.css */
 </style>
-
-<script>
-  // Initialize reading controls
-  document.addEventListener('DOMContentLoaded', () => {
-    // Save settings to localStorage if needed in the future
-    
-    // Add keyboard shortcuts for font size
-    document.addEventListener('keydown', (e: KeyboardEvent) => {
-      // Increase font size with '+'
-      if (e.key === '+' || e.key === '=') {
-        const content = document.getElementById('reading-content');
-        if (content) {
-          const currentSize = parseInt(window.getComputedStyle(content).fontSize);
-          content.style.fontSize = `${currentSize + 2}px`;
-        }
-      }
-      
-      // Decrease font size with '-'
-      if (e.key === '-' || e.key === '_') {
-        const content = document.getElementById('reading-content');
-        if (content) {
-          const currentSize = parseInt(window.getComputedStyle(content).fontSize);
-          content.style.fontSize = `${currentSize - 2}px`;
-        }
-      }
-      
-      // Toggle rotation with 'r'
-      if (e.key === 'r' || e.key === 'R') {
-        const container = document.getElementById('reading-container');
-        if (container) {
-          container.classList.toggle('rotate-landscape');
-        }
-      }
-    });
-  });
-</script>

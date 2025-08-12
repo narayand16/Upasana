@@ -1,29 +1,40 @@
-export interface ReadingControlsProps {
-  onFontSizeChange: (fontSize: number) => void;
-  onRotateScreen: () => void;
-  currentFontSize: number;
-  isScreenRotated: boolean;
-}
+import { useState, useEffect } from 'react';
 
-const ReadingControls = ({
-  onFontSizeChange,
-  onRotateScreen,
-  currentFontSize,
-  isScreenRotated,
-}: ReadingControlsProps) => {
-  const fontSizes: number[] = [16, 18, 20, 22, 24, 26, 28];
+const fontSizes: number[] = [16, 20, 24, 28, 32, 36, 40];
+
+const ReadingControls = () => {
+  const [currentFontSize, setCurrentFontSize] = useState<number>(20);
+
+  // Update the font size of #reading-content in the DOM whenever it changes
+  useEffect(() => {
+    const content = document.getElementById('reading-content');
+    if (content) {
+      content.style.fontSize = `${currentFontSize}px`;
+    }
+  }, [currentFontSize]);
+  const [isScreenRotated, setIsScreenRotated] = useState<boolean>(false);
   const currentIndex: number = fontSizes.indexOf(currentFontSize);
 
   const handleIncreaseFontSize = (): void => {
     if (currentIndex < fontSizes.length - 1) {
-      onFontSizeChange(fontSizes[currentIndex + 1]);
+      setCurrentFontSize(fontSizes[currentIndex + 1]);
     }
   };
 
   const handleDecreaseFontSize = (): void => {
     if (currentIndex > 0) {
-      onFontSizeChange(fontSizes[currentIndex - 1]);
+      setCurrentFontSize(fontSizes[currentIndex - 1]);
     }
+  };
+
+  const handleRotateScreen = (): void => {
+    setIsScreenRotated((prev) => {
+      const next = !prev;
+      if (typeof document !== 'undefined') {
+        document.body.classList.toggle('landscape-mode', next);
+      }
+      return next;
+    });
   };
 
   return (
@@ -62,7 +73,7 @@ const ReadingControls = ({
       
       <button
         type="button"
-        onClick={onRotateScreen}
+        onClick={handleRotateScreen}
         className="bg-white dark:bg-gray-800 rounded-full shadow-lg p-3 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
         aria-label={isScreenRotated ? "Portrait orientation" : "Landscape orientation"}
       >
