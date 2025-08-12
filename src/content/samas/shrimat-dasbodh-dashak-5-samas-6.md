@@ -1,37 +1,13 @@
 ---
 dashakId: "dashak-5"
 title: "Samas 6"
-titleDevanagari: "समा ६"
+titleDevanagari: "समास 6 - समास सहावा : शुद्धज्ञान निरूपण"
 number: 6
-description: "Samas 6 from Dashak 5 of Shrimat Dasbodh"
+description: "समास सहावा : शुद्धज्ञान निरूपण"
 ---
 
-## समा ६ - दशक ५
+## समास 6 - दशक ५
 
-<!-- TODO: Add the actual Sanskrit/Marathi content here -->
+समास सहावा : शुद्धज्ञान निरूपण
 
-**Placeholder Content - Dashak 5, Samas 6**
-
-This is a placeholder for the actual content of Samas 6 from Dashak 5 of Shrimat Dasbodh by Sant Ramdas Swami.
-
-### Instructions for Content Addition:
-1. Replace this placeholder with the actual Sanskrit/Marathi verses
-2. Add English translation if needed
-3. Include any commentary or explanations
-4. Use proper Devanagari formatting
-
-### Content Structure Suggestion:
-```
-## समा ६
-
-[Original Sanskrit/Marathi verse in Devanagari]
-
-_[Translation in preferred language]_
-
-[Any commentary or explanation]
-```
-
----
-**Book:** श्रीमद् दासबोध (Shrimat Dasbodh)  
-**Author:** संत रामदास स्वामी (Sant Ramdas Swami)  
-**Dashak:** 5 | **Sama:** 6
+॥ श्रीराम ॥

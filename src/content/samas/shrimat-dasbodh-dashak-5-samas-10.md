@@ -1,37 +1,13 @@
 ---
 dashakId: "dashak-5"
 title: "Samas 10"
-titleDevanagari: "समा १०"
+titleDevanagari: "समास 10 - समास दहावा : सिद्धलक्षण निरूपण"
 number: 10
-description: "Samas 10 from Dashak 5 of Shrimat Dasbodh"
+description: "समास दहावा : सिद्धलक्षण निरूपण"
 ---
 
-## समा १० - दशक ५
+## समास 10 - दशक ५
 
-<!-- TODO: Add the actual Sanskrit/Marathi content here -->
+समास दहावा : सिद्धलक्षण निरूपण॥ श्रीराम ॥
 
-**Placeholder Content - Dashak 5, Samas 10**
-
-This is a placeholder for the actual content of Samas 10 from Dashak 5 of Shrimat Dasbodh by Sant Ramdas Swami.
-
-### Instructions for Content Addition:
-1. Replace this placeholder with the actual Sanskrit/Marathi verses
-2. Add English translation if needed
-3. Include any commentary or explanations
-4. Use proper Devanagari formatting
-
-### Content Structure Suggestion:
-```
-## समा १०
-
-[Original Sanskrit/Marathi verse in Devanagari]
-
-_[Translation in preferred language]_
-
-[Any commentary or explanation]
-```
-
----
-**Book:** श्रीमद् दासबोध (Shrimat Dasbodh)  
-**Author:** संत रामदास स्वामी (Sant Ramdas Swami)  
-**Dashak:** 5 | **Sama:** 10
+॥ दशक पाचवा समाप्त ॥

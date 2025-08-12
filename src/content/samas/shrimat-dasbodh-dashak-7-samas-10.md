@@ -1,37 +1,13 @@
 ---
 dashakId: "dashak-7"
 title: "Samas 10"
-titleDevanagari: "समा १०"
+titleDevanagari: "समास 10 - समास दहावा : देहान्तनिरूपण"
 number: 10
-description: "Samas 10 from Dashak 7 of Shrimat Dasbodh"
+description: "समास दहावा : देहान्तनिरूपण"
 ---
 
-## समा १० - दशक ७
+## समास 10 - दशक ७
 
-<!-- TODO: Add the actual Sanskrit/Marathi content here -->
+समास दहावा : देहान्तनिरूपण॥ श्रीराम ॥
 
-**Placeholder Content - Dashak 7, Samas 10**
-
-This is a placeholder for the actual content of Samas 10 from Dashak 7 of Shrimat Dasbodh by Sant Ramdas Swami.
-
-### Instructions for Content Addition:
-1. Replace this placeholder with the actual Sanskrit/Marathi verses
-2. Add English translation if needed
-3. Include any commentary or explanations
-4. Use proper Devanagari formatting
-
-### Content Structure Suggestion:
-```
-## समा १०
-
-[Original Sanskrit/Marathi verse in Devanagari]
-
-_[Translation in preferred language]_
-
-[Any commentary or explanation]
-```
-
----
-**Book:** श्रीमद् दासबोध (Shrimat Dasbodh)  
-**Author:** संत रामदास स्वामी (Sant Ramdas Swami)  
-**Dashak:** 7 | **Sama:** 10
+॥ दशक सातवा समाप्त ॥

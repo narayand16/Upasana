@@ -1,37 +1,45 @@
 ---
 dashakId: "dashak-8"
 title: "Samas 4"
-titleDevanagari: "समा ४"
+titleDevanagari: "समास 4 - समास चौथा : सूक्ष्मपंचभूतेंनिरूपण"
 number: 4
-description: "Samas 4 from Dashak 8 of Shrimat Dasbodh"
+description: "समास चौथा : सूक्ष्मपंचभूतेंनिरूपण"
 ---
 
-## समा ४ - दशक ८
+## समास 4 - दशक ८
 
-<!-- TODO: Add the actual Sanskrit/Marathi content here -->
+समास चौथा : सूक्ष्मपंचभूतेंनिरूपण
 
-**Placeholder Content - Dashak 8, Samas 4**
+॥ श्रीराम ॥
 
-This is a placeholder for the actual content of Samas 4 from Dashak 8 of Shrimat Dasbodh by Sant Ramdas Swami.
+मागील आशंकेचें मूळ । आतां होईल प्रांजळ ।
 
-### Instructions for Content Addition:
-1. Replace this placeholder with the actual Sanskrit/Marathi verses
-2. Add English translation if needed
-3. Include any commentary or explanations
-4. Use proper Devanagari formatting
+वृत्ति करावी निवळ । निमिष्य येक ॥ १ ॥
 
-### Content Structure Suggestion:
-```
-## समा ४
+ब्रह्मीं मूळमाया जाली । तिच्या पोटा माया आली ।
 
-[Original Sanskrit/Marathi verse in Devanagari]
+मग ते गुणा प्रसवली । म्हणौनि गुणक्षोभिणी ॥ २ ॥
 
-_[Translation in preferred language]_
+पुढें तिजपासाव कोण । सत्वरजतमोगुण ।
 
-[Any commentary or explanation]
-```
+तमोगुणापासून निर्माण । जाली पंचभूतें ॥ ३ ॥
 
----
-**Book:** श्रीमद् दासबोध (Shrimat Dasbodh)  
-**Author:** संत रामदास स्वामी (Sant Ramdas Swami)  
-**Dashak:** 8 | **Sama:** 4
+ऐसीं भूतें उद्भवलीं । पुढें तत्वें विस्तारलीं ।
+
+एवं तमोगुणापासून जालीं । पंचमाहांभूतें ॥ ४ ॥
+
+मूळमाया गुणापरती । तेथें भूतें कैंचीं होतीं ।
+
+ऐसी आशंका हे श्रोतीं । घेतली मागां ॥ ५ ॥
+
+आणिक येक येके भूतीं । पंचभूतें असती ।
+
+ते हि आतां कैसी स्थिती । प्रांजळ करूं ॥ ६ ॥
+
+सूक्ष्मदृष्टीचें कौतुक । मूळमाया पंचभूतिक ।
+
+श्रोतीं विमळ विवेक । केला पाहिजे ॥ ७ ॥
+
+आधीं भूतें तीं जाणावीं । रूपें कैसीं वोळखावी ।
+
+मग तें शोधून पाहावीं । सूक्ष्मदृष्टीं ॥ ८ ॥
