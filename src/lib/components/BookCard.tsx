@@ -1,5 +1,3 @@
-import type { FC } from 'react';
-
 export interface BookCardProps {
   id: string;
   title: string;
@@ -9,14 +7,14 @@ export interface BookCardProps {
   coverImage?: string;
 }
 
-const BookCard: FC<BookCardProps> = ({
+const BookCard = ({
   id,
   title,
   titleDevanagari,
   description,
   author,
   coverImage,
-}) => {
+}: BookCardProps) => {
   return (
     <a 
       href={`/books/${id}`}

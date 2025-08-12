@@ -1,5 +1,3 @@
-import type { FC } from 'react';
-
 export interface BreadcrumbItem {
   label: string;
   path: string;
@@ -9,7 +7,7 @@ export interface BreadcrumbsProps {
   items: BreadcrumbItem[];
 }
 
-const Breadcrumbs: FC<BreadcrumbsProps> = ({ items }) => {
+const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
   return (
     <nav className="flex py-3 px-4 text-gray-600 dark:text-gray-300">
       <ol className="inline-flex items-center space-x-1 md:space-x-3">

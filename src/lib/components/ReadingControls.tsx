@@ -1,72 +1,33 @@
-import type { FC } from 'react';
-import { useState, useEffect } from 'react';
-
 export interface ReadingControlsProps {
-  currentFontSize?: number;
-  isScreenRotated?: boolean;
+  onFontSizeChange: (fontSize: number) => void;
+  onRotateScreen: () => void;
+  currentFontSize: number;
+  isScreenRotated: boolean;
 }
 
-const ReadingControls: FC<ReadingControlsProps> = ({
-  currentFontSize: initialFontSize = 20,
-  isScreenRotated: initialScreenRotated = false,
-}) => {
-  const fontSizes: number[] = [16, 20, 24, 28, 32, 36];
-  const [currentFontSize, setCurrentFontSize] = useState<number>(initialFontSize);
-  const [isScreenRotated, setIsScreenRotated] = useState<boolean>(initialScreenRotated);
-  
+const ReadingControls = ({
+  onFontSizeChange,
+  onRotateScreen,
+  currentFontSize,
+  isScreenRotated,
+}: ReadingControlsProps) => {
+  const fontSizes: number[] = [16, 18, 20, 22, 24, 26, 28];
   const currentIndex: number = fontSizes.indexOf(currentFontSize);
 
   const handleIncreaseFontSize = (): void => {
     if (currentIndex < fontSizes.length - 1) {
-      const newSize = fontSizes[currentIndex + 1];
-      setCurrentFontSize(newSize);
-      
-      // Apply the font size change
-      const content = document.getElementById('reading-content');
-      if (content) {
-        content.style.fontSize = `${newSize}px`;
-      }
+      onFontSizeChange(fontSizes[currentIndex + 1]);
     }
   };
 
   const handleDecreaseFontSize = (): void => {
     if (currentIndex > 0) {
-      const newSize = fontSizes[currentIndex - 1];
-      setCurrentFontSize(newSize);
-      
-      // Apply the font size change
-      const content = document.getElementById('reading-content');
-      if (content) {
-        content.style.fontSize = `${newSize}px`;
-      }
+      onFontSizeChange(fontSizes[currentIndex - 1]);
     }
   };
-
-  const handleRotateScreen = (): void => {
-    const newRotatedState = !isScreenRotated;
-    setIsScreenRotated(newRotatedState);
-    
-    // Apply the rotation to the entire page content
-    const body = document.body;
-    if (newRotatedState) {
-      // Switch to landscape mode
-      body.classList.add('landscape-mode');
-    } else {
-      // Switch back to portrait mode
-      body.classList.remove('landscape-mode');
-    }
-  };
-
-  // Apply initial font size on mount
-  useEffect(() => {
-    const content = document.getElementById('reading-content');
-    if (content) {
-      content.style.fontSize = `${initialFontSize}px`;
-    }
-  }, [initialFontSize]); // Include initialFontSize as dependency
 
   return (
-    <div className="reading-controls fixed bottom-4 right-4 flex flex-col gap-2 z-10">
+    <div className="fixed bottom-4 right-4 flex flex-col gap-2 z-10">
       <div className="bg-white dark:bg-gray-800 rounded-full shadow-lg flex flex-col items-center p-2">
         <button
           type="button"
@@ -101,36 +62,25 @@ const ReadingControls: FC<ReadingControlsProps> = ({
       
       <button
         type="button"
-        onClick={handleRotateScreen}
+        onClick={onRotateScreen}
         className="bg-white dark:bg-gray-800 rounded-full shadow-lg p-3 text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"
-        aria-label={isScreenRotated ? "Switch to portrait mode" : "Switch to landscape mode"}
+        aria-label={isScreenRotated ? "Portrait orientation" : "Landscape orientation"}
       >
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
-          className="h-6 w-6" 
+          className={`h-6 w-6 transition-transform ${isScreenRotated ? 'rotate-90' : ''}`} 
           fill="none" 
           viewBox="0 0 24 24" 
           stroke="currentColor"
           aria-hidden="true"
         >
           <title>Rotate screen</title>
-          {isScreenRotated ? (
-            // Portrait mode icon (phone upright)
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={2} 
-              d="M7 3h10a2 2 0 012 2v14a2 2 0 01-2 2H7a2 2 0 01-2-2V5a2 2 0 012-2zm0 14h10M9 7h6" 
-            />
-          ) : (
-            // Landscape mode icon (phone sideways)
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={2} 
-              d="M3 7h14a2 2 0 012 2v10a2 2 0 01-2 2H3a2 2 0 01-2-2V9a2 2 0 012-2zm14 0V5a2 2 0 00-2-2H7M7 9v6" 
-            />
-          )}
+          <path 
+            strokeLinecap="round" 
+            strokeLinejoin="round" 
+            strokeWidth={2} 
+            d="M4 5a1 1 0 011-1h14a1 1 0 011 1v14a1 1 0 01-1 1H5a1 1 0 01-1-1V5z" 
+          />
         </svg>
       </button>
     </div>
