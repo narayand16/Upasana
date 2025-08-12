@@ -44,7 +44,7 @@ const ReadingControls = () => {
           type="button"
           onClick={handleIncreaseFontSize}
           disabled={currentIndex >= fontSizes.length - 1}
-          className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 disabled:opacity-50 p-2"
+          className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 disabled:opacity-50 p-2 cursor-pointer"
           aria-label="Increase font size"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -61,7 +61,7 @@ const ReadingControls = () => {
           type="button"
           onClick={handleDecreaseFontSize}
           disabled={currentIndex <= 0}
-          className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 disabled:opacity-50 p-2"
+          className="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 disabled:opacity-50 p-2 cursor-pointer"
           aria-label="Decrease font size"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
