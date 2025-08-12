@@ -1,12 +1,12 @@
 ---
 dashakId: "dashak-6"
 title: "Samas 9"
-titleDevanagari: "समास 9 - समास नववा : सारशोधन"
+titleDevanagari: "समास ९ - समास नववा : सारशोधन"
 number: 9
 description: "समास नववा : सारशोधन"
 ---
 
-## समास 9 - दशक ६
+## समास ९ - दशक ६
 
 समास नववा : सारशोधन॥ श्रीराम ॥
 

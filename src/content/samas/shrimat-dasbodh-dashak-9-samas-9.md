@@ -1,12 +1,12 @@
 ---
 dashakId: "dashak-9"
 title: "Samas 9"
-titleDevanagari: "समास 9 - समास नववा : संदेहवारण"
+titleDevanagari: "समास ९ - समास नववा : संदेहवारण"
 number: 9
 description: "समास नववा : संदेहवारण"
 ---
 
-## समास 9 - दशक ९
+## समास ९ - दशक ९
 
 समास नववा : संदेहवारण॥ श्रीराम ॥
 
