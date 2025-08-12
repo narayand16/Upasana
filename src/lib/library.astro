@@ -1,6 +1,6 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import { BookCard } from '@/lib/components';
+import Layout from "@/layouts/Layout.astro";
+import { BookCard } from "@/lib/components";
 import type { BookEntry } from "@/types";
 
 interface LibraryProps {
@@ -10,8 +10,10 @@ interface LibraryProps {
 const { books } = Astro.props as LibraryProps;
 ---
 
-<Layout title="Upasana - Sacred Texts Library">
-  <main class="bg-gradient-to-br from-purple-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 min-h-screen">
+<Layout title="Upasana">
+  <main
+    class="bg-gradient-to-br from-purple-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 min-h-screen"
+  >
     <div class="container mx-auto px-4 py-8">
       <!-- <header class="text-center mb-10">
         <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">
@@ -23,17 +25,19 @@ const { books } = Astro.props as LibraryProps;
       </header> -->
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {books.map((book) => (
-          <BookCard
-            id={book.id}
-            title={book.data.title}
-            titleDevanagari={book.data.titleDevanagari}
-            description={book.data.description}
-            author={book.data.author}
-            coverImage={book.data.coverImage}
-            client:load
-          />
-        ))}
+        {
+          books.map((book) => (
+            <BookCard
+              id={book.id}
+              title={book.data.title}
+              titleDevanagari={book.data.titleDevanagari}
+              description={book.data.description}
+              author={book.data.author}
+              coverImage={book.data.coverImage}
+              client:load
+            />
+          ))
+        }
       </div>
     </div>
   </main>

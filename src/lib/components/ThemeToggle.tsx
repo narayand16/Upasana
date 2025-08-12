@@ -24,14 +24,17 @@ function applyTheme(theme: Theme) {
   if (typeof document === 'undefined') return;
   const root = document.documentElement;
   const isDark = theme === 'dark' || (theme === 'system' && prefersDark());
-  root.classList.toggle('dark', isDark);
-  root.style.colorScheme = isDark ? 'dark' : 'light';
+  if (isDark) {
+    root.classList.add('dark');
+  } else {
+    root.classList.remove('dark');
+  }
 }
 
 export default function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>(() => getStoredTheme());
 
-  // Apply theme on mount and whenever theme changes
+  // Sync theme on mount (prevents hydration mismatch)
   useEffect(() => {
     applyTheme(theme);
     setStoredTheme(theme);
@@ -42,13 +45,14 @@ export default function ThemeToggle() {
     if (typeof window === 'undefined') return;
     const mql = window.matchMedia?.('(prefers-color-scheme: dark)');
     if (!mql) return;
-
     const handler = () => {
-      if (theme === 'system') applyTheme('system');
+      if (getStoredTheme() === 'system') {
+        applyTheme('system');
+      }
     };
     mql.addEventListener?.('change', handler);
     return () => mql.removeEventListener?.('change', handler);
-  }, [theme]);
+  }, []);
 
   const ariaLabel = useMemo(() => {
     if (theme === 'light') return 'Switch to dark mode';
