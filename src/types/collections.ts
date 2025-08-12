@@ -1,3 +1,4 @@
+
 import type { CollectionEntry } from 'astro:content';
 
 // Type-safe collection entries

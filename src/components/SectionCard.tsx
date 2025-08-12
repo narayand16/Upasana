@@ -1,5 +1,3 @@
-import type { FC } from 'react';
-
 export interface SectionCardProps {
   id: string;
   bookId: string;
@@ -9,14 +7,14 @@ export interface SectionCardProps {
   description?: string;
 }
 
-const SectionCard: FC<SectionCardProps> = ({
+const SectionCard = ({
   id,
   bookId,
   title,
   titleDevanagari,
   number,
   description,
-}) => {
+}: SectionCardProps) => {
   return (
     <a 
       href={`/books/${bookId}/${id}`}

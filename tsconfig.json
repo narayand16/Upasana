@@ -4,10 +4,12 @@
   "exclude": ["dist"],
   "compilerOptions": {
     "verbatimModuleSyntax": true,
+    "baseUrl": ".",
     "paths": {
       "@/lib/*": ["src/lib/*"],
       "@/layouts/*": ["src/layouts/*"],
-      "@/types/*": ["src/types/*"]
+      "@/types/*": ["src/types/*"],
+      "@/types": ["src/types/index.ts", "src/types"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"

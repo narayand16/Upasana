@@ -1,5 +1,3 @@
-import { useState, type FC } from 'react';
-
 export interface ReadingControlsProps {
   onFontSizeChange: (fontSize: number) => void;
   onRotateScreen: () => void;
@@ -7,12 +5,12 @@ export interface ReadingControlsProps {
   isScreenRotated: boolean;
 }
 
-const ReadingControls: FC<ReadingControlsProps> = ({
+const ReadingControls = ({
   onFontSizeChange,
   onRotateScreen,
   currentFontSize,
   isScreenRotated,
-}) => {
+}: ReadingControlsProps) => {
   const fontSizes: number[] = [16, 18, 20, 22, 24, 26, 28];
   const currentIndex: number = fontSizes.indexOf(currentFontSize);
 
