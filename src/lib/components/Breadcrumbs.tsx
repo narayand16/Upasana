@@ -9,7 +9,7 @@ export interface BreadcrumbsProps {
 
 const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
   return (
-    <nav className="flex py-3 px-4 text-gray-600 dark:text-gray-300">
+    <nav className="flex p-4 text-gray-600 dark:text-gray-300">
       <ol className="inline-flex items-center space-x-1 md:space-x-3">
         {items.map((item, index) => (
           <li key={item.path} className="inline-flex items-center">

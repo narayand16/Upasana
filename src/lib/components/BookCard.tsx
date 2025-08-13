@@ -28,8 +28,8 @@ const BookCard = ({
             className="object-cover w-full h-full"
           />
         ) : (
-          <div className="text-4xl font-devanagari font-bold text-white">
-            {titleDevanagari.charAt(0)}
+          <div className="text-4xl font-devanagari font-bold dark:text-white">
+            {titleDevanagari}
           </div>
         )}
       </div>

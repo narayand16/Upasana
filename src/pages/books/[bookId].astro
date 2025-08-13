@@ -1,14 +1,14 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from '@/layouts/Layout.astro';
-import { SectionCard, Breadcrumbs } from '@/lib/components';
-import type { BookEntry, DashakEntry } from '@/types';
-import type { BreadcrumbItem } from '@/lib/components';
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import { SectionCard, Breadcrumbs, Container } from "@/lib/components";
+import type { BookEntry, DashakEntry } from "@/types";
+import type { BreadcrumbItem } from "@/lib/components";
 
 export async function getStaticPaths() {
-  const books = await getCollection('books');
-  
-  return books.map(book => ({
+  const books = await getCollection("books");
+
+  return books.map((book) => ({
     params: { bookId: book.id },
     props: { book: book },
   }));
@@ -21,8 +21,8 @@ interface BookPageProps {
 
 const { book } = Astro.props as BookPageProps;
 const dashaks: DashakEntry[] = await getCollection(
-  'dashaks', 
-  (dashak) => dashak.data.bookId === book.id
+  "dashaks",
+  (dashak) => dashak.data.bookId === book.id,
 );
 
 // Sort dashaks by number
@@ -30,66 +30,91 @@ dashaks.sort((a, b) => a.data.number - b.data.number);
 
 // Breadcrumb items
 const breadcrumbItems: BreadcrumbItem[] = [
-  { label: 'Home', path: '/' },
+  { label: "Home", path: "/" },
   { label: book.data.title, path: `/books/${book.id}` },
 ];
 ---
 
 <Layout title={`${book.data.title} - Upasana`}>
-  <div class="bg-gradient-to-br from-purple-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 min-h-screen">
-    <div class="container mx-auto px-4 py-6">
-      <Breadcrumbs items={breadcrumbItems} client:load />
-      
-      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden mb-8">
-        <div class="md:flex">
-          <div class="md:flex-shrink-0 bg-gradient-to-br from-primary-500 to-primary-700 text-white p-8 flex items-center justify-center md:w-1/3">
-            {book.data.coverImage ? (
-              <img 
-                src={book.data.coverImage} 
-                alt={book.data.title} 
+  <Container>
+    <Breadcrumbs items={breadcrumbItems} client:load />
+
+    <div
+      class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden mb-8"
+    >
+      <div class="md:flex">
+        <div
+          class="md:flex-shrink-0 bg-gradient-to-br from-primary-200 to-primary-400 text-white p-8 flex items-center justify-center md:w-1/3"
+        >
+          {
+            book.data.coverImage ? (
+              <img
+                src={book.data.coverImage}
+                alt={book.data.title}
                 class="w-full max-w-xs object-cover rounded-lg shadow-lg"
               />
             ) : (
               <div class="text-8xl font-devanagari font-bold">
                 {book.data.titleDevanagari.charAt(0)}
               </div>
-            )}
-          </div>
-          
-          <div class="p-6 md:p-8 md:w-2/3">
-            <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1">
-              {book.data.title}
-            </h1>
-            <h2 class="text-xl md:text-2xl font-devanagari text-primary-600 dark:text-primary-400 mb-3">
-              {book.data.titleDevanagari}
-            </h2>
-            {book.data.author && (
+            )
+          }
+        </div>
+
+        <div class="p-6 md:p-8 md:w-2/3">
+          <h1
+            class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1"
+          >
+            {book.data.title}
+          </h1>
+          <h2
+            class="text-xl md:text-2xl font-devanagari text-primary-600 dark:text-primary-400 mb-3"
+          >
+            {book.data.titleDevanagari}
+          </h2>
+          {
+            book.data.author && (
               <p class="text-gray-600 dark:text-gray-400 mb-4">
                 by {book.data.author}
               </p>
-            )}
-            <p class="text-gray-700 dark:text-gray-300 mb-6">
-              {book.data.description}
-            </p>
-            
-            <div class="flex items-center text-gray-600 dark:text-gray-400 text-sm">
-              <div class="mr-4">
-                <span class="font-medium">{book.data.sections.length}</span> {book.data.sectionType}s
-              </div>
-              <div>
-                <span class="font-medium">{dashaks.reduce((sum, dashak) => sum + dashak.data.samas.length, 0)}</span> samas
-              </div>
+            )
+          }
+          <p class="text-gray-700 dark:text-gray-300 mb-6">
+            {book.data.description}
+          </p>
+
+          <div
+            class="flex items-center text-gray-600 dark:text-gray-400 text-sm"
+          >
+            <div class="mr-4">
+              <span class="font-medium">{book.data.sections.length}</span>
+              {book.data.sectionType}s
+            </div>
+            <div>
+              <span class="font-medium"
+                >{
+                  dashaks.reduce(
+                    (sum, dashak) => sum + dashak.data.samas.length,
+                    0,
+                  )
+                }</span
+              > samas
             </div>
           </div>
         </div>
       </div>
-      
-      <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
-        {book.data.sectionType.charAt(0).toUpperCase() + book.data.sectionType.slice(1)}s
-      </h2>
-      
-      <div class="grid gap-4 mb-8">
-        {dashaks.map((dashak) => (
+    </div>
+
+    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+      {
+        book.data.sectionType.charAt(0).toUpperCase() +
+          book.data.sectionType.slice(1)
+      }s
+    </h2>
+
+    <div class="grid gap-4 mb-8">
+      {
+        dashaks.map((dashak) => (
           <SectionCard
             id={dashak.id}
             bookId={book.id}
@@ -99,8 +124,8 @@ const breadcrumbItems: BreadcrumbItem[] = [
             description={dashak.data.description}
             client:load
           />
-        ))}
-      </div>
+        ))
+      }
     </div>
-  </div>
+  </Container>
 </Layout>

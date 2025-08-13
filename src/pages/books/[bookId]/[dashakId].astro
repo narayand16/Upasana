@@ -1,25 +1,25 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from '@/layouts/Layout.astro';
-import { Breadcrumbs } from '@/lib/components';
-import { getCleanId } from '@/lib/utils';
-import type { BookEntry, DashakEntry, SamasEntry } from '@/types/collections';
+import { getCollection } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+import { Breadcrumbs, Container } from "@/lib/components";
+import { getCleanId } from "@/lib/utils";
+import type { BookEntry, DashakEntry, SamasEntry } from "@/types/collections";
 
 export async function getStaticPaths() {
-  const books = await getCollection('books');
-  const dashaks = await getCollection('dashaks');
-  
-  return dashaks.map(dashak => {
-    const book = books.find(book => book.id === dashak.data.bookId);
-    
+  const books = await getCollection("books");
+  const dashaks = await getCollection("dashaks");
+
+  return dashaks.map((dashak) => {
+    const book = books.find((book) => book.id === dashak.data.bookId);
+
     return {
-      params: { 
+      params: {
         bookId: dashak.data.bookId,
-        dashakId: dashak.id
+        dashakId: dashak.id,
       },
-      props: { 
+      props: {
         dashak,
-        book
+        book,
       },
     };
   });
@@ -33,50 +33,54 @@ interface DashakPageProps {
 
 const { dashak, book } = Astro.props as DashakPageProps;
 
-const samasEntries: SamasEntry[] = await getCollection(
-  'samas', (samas) => {
-    // Use utility function to get clean ID for matching
-    return dashak.data.samas.includes(getCleanId(samas.id));
-  }
-);
+const samasEntries: SamasEntry[] = await getCollection("samas", (samas) => {
+  // Use utility function to get clean ID for matching
+  return dashak.data.samas.includes(getCleanId(samas.id));
+});
 
 // Sort samas by number
 samasEntries.sort((a, b) => a.data.number - b.data.number);
 
 // Breadcrumb items
 const breadcrumbItems = [
-  { label: 'Home', path: '/' },
+  { label: "Home", path: "/" },
   { label: book.data.title, path: `/books/${book.id}` },
   { label: dashak.data.title, path: `/books/${book.id}/${dashak.id}` },
 ];
 ---
 
 <Layout title={`${dashak.data.title} - ${book.data.title} - Upasana`}>
-  <div class="bg-gradient-to-br from-purple-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 min-h-screen">
-    <div class="container mx-auto px-4 py-6">
-      <Breadcrumbs items={breadcrumbItems} client:load />
-      
-      <header class="mb-8">
-        <h1 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1">
-          {dashak.data.title}
-        </h1>
-        <h2 class="text-xl md:text-2xl font-devanagari text-primary-600 dark:text-primary-400 mb-4">
-          {dashak.data.titleDevanagari}
-        </h2>
-        {dashak.data.description && (
+  <Container>
+    <Breadcrumbs items={breadcrumbItems} client:load />
+
+    <header class="mb-8">
+      <h1
+        class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1"
+      >
+        {dashak.data.title}
+      </h1>
+      <h2
+        class="text-xl md:text-2xl font-devanagari text-primary-600 dark:text-primary-400 mb-4"
+      >
+        {dashak.data.titleDevanagari}
+      </h2>
+      {
+        dashak.data.description && (
           <p class="text-gray-700 dark:text-gray-300 mb-2">
             {dashak.data.description}
           </p>
-        )}
-        <div class="text-sm text-gray-600 dark:text-gray-400">
-          {samasEntries.length} samas
-        </div>
-      </header>
-      
-      <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md">
-        <div class="divide-y divide-gray-200 dark:divide-gray-700">
-          {samasEntries.map((samas, index) => (
-            <a 
+        )
+      }
+      <div class="text-sm text-gray-600 dark:text-gray-400">
+        {samasEntries.length} samas
+      </div>
+    </header>
+
+    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md">
+      <div class="divide-y divide-gray-200 dark:divide-gray-700">
+        {
+          samasEntries.map((samas, index) => (
+            <a
               href={`/books/${book.id}/${dashak.id}/${getCleanId(samas.id)}`}
               class="block p-4 hover:bg-gray-50 dark:hover:bg-gray-700 transition duration-150"
             >
@@ -98,15 +102,25 @@ const breadcrumbItems = [
                   )}
                 </div>
                 <div class="flex-shrink-0 text-gray-400 dark:text-gray-500">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                      clip-rule="evenodd"
+                    />
                   </svg>
                 </div>
               </div>
             </a>
-          ))}
-        </div>
+          ))
+        }
       </div>
     </div>
-  </div>
+  </Container>
 </Layout>
