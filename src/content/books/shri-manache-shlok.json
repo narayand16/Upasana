@@ -5,6 +5,8 @@
     "description": "A spiritual guide by Sant Ramdas Swami, which offers profound teachings for our human mind",
     "author": "Sant Ramdas Swami",
     "coverImage": "/images/books/book-sample.jpg",
+    "sections": [],
+    "sectionType": "shlok",
     "shloks": [
     {
       "number": 1,

@@ -37,3 +37,5 @@ export interface NavItem {
 
 // Theme Types
 export type ThemeMode = 'light' | 'dark' | 'system';
+
+export const SHLOK_SECTION = "shlok"

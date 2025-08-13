@@ -5,6 +5,7 @@ export { default as Breadcrumbs } from './Breadcrumbs';
 export { default as ReadingControls } from './ReadingControls';
 export { default as ThemeToggle } from './ThemeToggle';
 export { default as Container } from './Container';
+export { default as ShlokViewer } from './ShlokViewer';
 
 // Export component types
 export type { BookCardProps } from './BookCard';

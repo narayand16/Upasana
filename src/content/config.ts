@@ -3,16 +3,22 @@ import type { Book, Dashak, Samas } from '../types';
 
 // Define schema for books
 const booksCollection = defineCollection({
-  type: 'data', // Using data collection for JSON data
+  type: 'data',
   schema: z.object({
     title: z.string(),
     titleDevanagari: z.string(),
     description: z.string(),
     author: z.string().optional(),
     coverImage: z.string().optional(),
-    sections: z.array(z.string()), // IDs of sections (dashaks/adhyays)
-    sectionType: z.string(), // 'dashak', 'adhyay', etc.
-  }) satisfies z.ZodType<Book>,
+    sections: z.array(z.string()).optional(), // Now optional for shlok books
+    sectionType: z.string(), // 'dashak', 'adhyay', 'shlok', etc.
+    shloks: z.array(
+      z.object({
+        number: z.number(),
+        lines: z.array(z.string()).length(4)
+      })
+    ).optional(), // Only present for shlok books
+  }),
 });
 
 // Define schema for dashaks/adhyays
