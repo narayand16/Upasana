@@ -13,13 +13,13 @@ export const ShlokCard: React.FC<ShlokCardProps> = ({ number, lines, isFavourite
         type="button"
         aria-label={isFavourite ? 'Unfavourite' : 'Favourite'}
         onClick={onToggleFavourite}
-        className="text-yellow-500 text-xl"
+        className="text-yellow-500 text-xl cursor-pointer"
       >
         {isFavourite ? '★' : '☆'}
       </button>
     </div>
     <div className="font-devanagari text-base space-y-1">
-      {lines.map((line, i) => <div key={i}>{line}</div>)}
+      {lines.map((line, i) => <div key={`${line.at(0)}-${i}`}>{line}</div>)}
     </div>
   </div>
 );
