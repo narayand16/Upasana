@@ -1,19 +1,19 @@
 {
-  "bookId": "shrimat-dasbodh",
-  "title": "Dashak 4",
-  "titleDevanagari": "दशक ४",
-  "number": 4,
-  "description": "The 4th chapter of Shrimat Dasbodh",
-  "samas": [
-    "shrimat-dasbodh-dashak-4-samas-1",
-    "shrimat-dasbodh-dashak-4-samas-2",
-    "shrimat-dasbodh-dashak-4-samas-3",
-    "shrimat-dasbodh-dashak-4-samas-4",
-    "shrimat-dasbodh-dashak-4-samas-5",
-    "shrimat-dasbodh-dashak-4-samas-6",
-    "shrimat-dasbodh-dashak-4-samas-7",
-    "shrimat-dasbodh-dashak-4-samas-8",
-    "shrimat-dasbodh-dashak-4-samas-9",
-    "shrimat-dasbodh-dashak-4-samas-10"
-  ]
+	"bookId": "shrimat-dasbodh",
+	"title": "Dashak 4",
+	"titleDevanagari": "दशक ४ - नवविधा भक्ती",
+	"number": 4,
+	"description": "नवविधा भक्ती",
+	"samas": [
+		"shrimat-dasbodh-dashak-4-samas-1",
+		"shrimat-dasbodh-dashak-4-samas-2",
+		"shrimat-dasbodh-dashak-4-samas-3",
+		"shrimat-dasbodh-dashak-4-samas-4",
+		"shrimat-dasbodh-dashak-4-samas-5",
+		"shrimat-dasbodh-dashak-4-samas-6",
+		"shrimat-dasbodh-dashak-4-samas-7",
+		"shrimat-dasbodh-dashak-4-samas-8",
+		"shrimat-dasbodh-dashak-4-samas-9",
+		"shrimat-dasbodh-dashak-4-samas-10"
+	]
 }

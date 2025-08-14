@@ -1,19 +1,19 @@
 {
-  "bookId": "shrimat-dasbodh",
-  "title": "Dashak 20",
-  "titleDevanagari": "दशक २०",
-  "number": 20,
-  "description": "The 20th chapter of Shrimat Dasbodh",
-  "samas": [
-    "shrimat-dasbodh-dashak-20-samas-1",
-    "shrimat-dasbodh-dashak-20-samas-2",
-    "shrimat-dasbodh-dashak-20-samas-3",
-    "shrimat-dasbodh-dashak-20-samas-4",
-    "shrimat-dasbodh-dashak-20-samas-5",
-    "shrimat-dasbodh-dashak-20-samas-6",
-    "shrimat-dasbodh-dashak-20-samas-7",
-    "shrimat-dasbodh-dashak-20-samas-8",
-    "shrimat-dasbodh-dashak-20-samas-9",
-    "shrimat-dasbodh-dashak-20-samas-10"
-  ]
+	"bookId": "shrimat-dasbodh",
+	"title": "Dashak 20",
+	"titleDevanagari": "दशक २० - पूर्णदशक",
+	"number": 20,
+	"description": "पूर्णदशक",
+	"samas": [
+		"shrimat-dasbodh-dashak-20-samas-1",
+		"shrimat-dasbodh-dashak-20-samas-2",
+		"shrimat-dasbodh-dashak-20-samas-3",
+		"shrimat-dasbodh-dashak-20-samas-4",
+		"shrimat-dasbodh-dashak-20-samas-5",
+		"shrimat-dasbodh-dashak-20-samas-6",
+		"shrimat-dasbodh-dashak-20-samas-7",
+		"shrimat-dasbodh-dashak-20-samas-8",
+		"shrimat-dasbodh-dashak-20-samas-9",
+		"shrimat-dasbodh-dashak-20-samas-10"
+	]
 }

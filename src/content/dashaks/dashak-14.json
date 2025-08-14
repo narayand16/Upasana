@@ -1,19 +1,19 @@
 {
-  "bookId": "shrimat-dasbodh",
-  "title": "Dashak 14",
-  "titleDevanagari": "दशक १४",
-  "number": 14,
-  "description": "The 14th chapter of Shrimat Dasbodh",
-  "samas": [
-    "shrimat-dasbodh-dashak-14-samas-1",
-    "shrimat-dasbodh-dashak-14-samas-2",
-    "shrimat-dasbodh-dashak-14-samas-3",
-    "shrimat-dasbodh-dashak-14-samas-4",
-    "shrimat-dasbodh-dashak-14-samas-5",
-    "shrimat-dasbodh-dashak-14-samas-6",
-    "shrimat-dasbodh-dashak-14-samas-7",
-    "shrimat-dasbodh-dashak-14-samas-8",
-    "shrimat-dasbodh-dashak-14-samas-9",
-    "shrimat-dasbodh-dashak-14-samas-10"
-  ]
+	"bookId": "shrimat-dasbodh",
+	"title": "Dashak 14",
+	"titleDevanagari": "दशक १४ - अखंडध्याननाम",
+	"number": 14,
+	"description": "अखंडध्याननाम",
+	"samas": [
+		"shrimat-dasbodh-dashak-14-samas-1",
+		"shrimat-dasbodh-dashak-14-samas-2",
+		"shrimat-dasbodh-dashak-14-samas-3",
+		"shrimat-dasbodh-dashak-14-samas-4",
+		"shrimat-dasbodh-dashak-14-samas-5",
+		"shrimat-dasbodh-dashak-14-samas-6",
+		"shrimat-dasbodh-dashak-14-samas-7",
+		"shrimat-dasbodh-dashak-14-samas-8",
+		"shrimat-dasbodh-dashak-14-samas-9",
+		"shrimat-dasbodh-dashak-14-samas-10"
+	]
 }

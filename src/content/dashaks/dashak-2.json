@@ -1,19 +1,19 @@
 {
-  "bookId": "shrimat-dasbodh",
-  "title": "Dashak 2",
-  "titleDevanagari": "दशक २",
-  "number": 2,
-  "description": "The 2nd chapter of Shrimat Dasbodh",
-  "samas": [
-    "shrimat-dasbodh-dashak-2-samas-1",
-    "shrimat-dasbodh-dashak-2-samas-2",
-    "shrimat-dasbodh-dashak-2-samas-3",
-    "shrimat-dasbodh-dashak-2-samas-4",
-    "shrimat-dasbodh-dashak-2-samas-5",
-    "shrimat-dasbodh-dashak-2-samas-6",
-    "shrimat-dasbodh-dashak-2-samas-7",
-    "shrimat-dasbodh-dashak-2-samas-8",
-    "shrimat-dasbodh-dashak-2-samas-9",
-    "shrimat-dasbodh-dashak-2-samas-10"
-  ]
+	"bookId": "shrimat-dasbodh",
+	"title": "Dashak 2",
+	"titleDevanagari": "दशक २ - मूर्खलक्षणाचा",
+	"number": 2,
+	"description": "मूर्खलक्षणाचा",
+	"samas": [
+		"shrimat-dasbodh-dashak-2-samas-1",
+		"shrimat-dasbodh-dashak-2-samas-2",
+		"shrimat-dasbodh-dashak-2-samas-3",
+		"shrimat-dasbodh-dashak-2-samas-4",
+		"shrimat-dasbodh-dashak-2-samas-5",
+		"shrimat-dasbodh-dashak-2-samas-6",
+		"shrimat-dasbodh-dashak-2-samas-7",
+		"shrimat-dasbodh-dashak-2-samas-8",
+		"shrimat-dasbodh-dashak-2-samas-9",
+		"shrimat-dasbodh-dashak-2-samas-10"
+	]
 }

@@ -1,19 +1,19 @@
 {
-  "bookId": "shrimat-dasbodh",
-  "title": "Dashak 15",
-  "titleDevanagari": "दशक १५",
-  "number": 15,
-  "description": "The 15th chapter of Shrimat Dasbodh",
-  "samas": [
-    "shrimat-dasbodh-dashak-15-samas-1",
-    "shrimat-dasbodh-dashak-15-samas-2",
-    "shrimat-dasbodh-dashak-15-samas-3",
-    "shrimat-dasbodh-dashak-15-samas-4",
-    "shrimat-dasbodh-dashak-15-samas-5",
-    "shrimat-dasbodh-dashak-15-samas-6",
-    "shrimat-dasbodh-dashak-15-samas-7",
-    "shrimat-dasbodh-dashak-15-samas-8",
-    "shrimat-dasbodh-dashak-15-samas-9",
-    "shrimat-dasbodh-dashak-15-samas-10"
-  ]
+	"bookId": "shrimat-dasbodh",
+	"title": "Dashak 15",
+	"titleDevanagari": "दशक १५ - आत्मदशक",
+	"number": 15,
+	"description": "आत्मदशक",
+	"samas": [
+		"shrimat-dasbodh-dashak-15-samas-1",
+		"shrimat-dasbodh-dashak-15-samas-2",
+		"shrimat-dasbodh-dashak-15-samas-3",
+		"shrimat-dasbodh-dashak-15-samas-4",
+		"shrimat-dasbodh-dashak-15-samas-5",
+		"shrimat-dasbodh-dashak-15-samas-6",
+		"shrimat-dasbodh-dashak-15-samas-7",
+		"shrimat-dasbodh-dashak-15-samas-8",
+		"shrimat-dasbodh-dashak-15-samas-9",
+		"shrimat-dasbodh-dashak-15-samas-10"
+	]
 }

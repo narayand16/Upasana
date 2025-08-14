@@ -1,19 +1,19 @@
 {
-  "bookId": "shrimat-dasbodh",
-  "title": "Dashak 8",
-  "titleDevanagari": "दशक ८",
-  "number": 8,
-  "description": "The 8th chapter of Shrimat Dasbodh",
-  "samas": [
-    "shrimat-dasbodh-dashak-8-samas-1",
-    "shrimat-dasbodh-dashak-8-samas-2",
-    "shrimat-dasbodh-dashak-8-samas-3",
-    "shrimat-dasbodh-dashak-8-samas-4",
-    "shrimat-dasbodh-dashak-8-samas-5",
-    "shrimat-dasbodh-dashak-8-samas-6",
-    "shrimat-dasbodh-dashak-8-samas-7",
-    "shrimat-dasbodh-dashak-8-samas-8",
-    "shrimat-dasbodh-dashak-8-samas-9",
-    "shrimat-dasbodh-dashak-8-samas-10"
-  ]
+	"bookId": "shrimat-dasbodh",
+	"title": "Dashak 8",
+	"titleDevanagari": "दशक ८ - ज्ञानदशक",
+	"number": 8,
+	"description": "ज्ञानदशक",
+	"samas": [
+		"shrimat-dasbodh-dashak-8-samas-1",
+		"shrimat-dasbodh-dashak-8-samas-2",
+		"shrimat-dasbodh-dashak-8-samas-3",
+		"shrimat-dasbodh-dashak-8-samas-4",
+		"shrimat-dasbodh-dashak-8-samas-5",
+		"shrimat-dasbodh-dashak-8-samas-6",
+		"shrimat-dasbodh-dashak-8-samas-7",
+		"shrimat-dasbodh-dashak-8-samas-8",
+		"shrimat-dasbodh-dashak-8-samas-9",
+		"shrimat-dasbodh-dashak-8-samas-10"
+	]
 }

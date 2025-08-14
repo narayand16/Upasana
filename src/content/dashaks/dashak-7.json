@@ -1,19 +1,19 @@
 {
-  "bookId": "shrimat-dasbodh",
-  "title": "Dashak 7",
-  "titleDevanagari": "दशक ७",
-  "number": 7,
-  "description": "The 7th chapter of Shrimat Dasbodh",
-  "samas": [
-    "shrimat-dasbodh-dashak-7-samas-1",
-    "shrimat-dasbodh-dashak-7-samas-2",
-    "shrimat-dasbodh-dashak-7-samas-3",
-    "shrimat-dasbodh-dashak-7-samas-4",
-    "shrimat-dasbodh-dashak-7-samas-5",
-    "shrimat-dasbodh-dashak-7-samas-6",
-    "shrimat-dasbodh-dashak-7-samas-7",
-    "shrimat-dasbodh-dashak-7-samas-8",
-    "shrimat-dasbodh-dashak-7-samas-9",
-    "shrimat-dasbodh-dashak-7-samas-10"
-  ]
+	"bookId": "shrimat-dasbodh",
+	"title": "Dashak 7",
+	"titleDevanagari": "दशक ७ - चौदा ब्रह्मांचा",
+	"number": 7,
+	"description": "चौदा ब्रह्मांचा",
+	"samas": [
+		"shrimat-dasbodh-dashak-7-samas-1",
+		"shrimat-dasbodh-dashak-7-samas-2",
+		"shrimat-dasbodh-dashak-7-samas-3",
+		"shrimat-dasbodh-dashak-7-samas-4",
+		"shrimat-dasbodh-dashak-7-samas-5",
+		"shrimat-dasbodh-dashak-7-samas-6",
+		"shrimat-dasbodh-dashak-7-samas-7",
+		"shrimat-dasbodh-dashak-7-samas-8",
+		"shrimat-dasbodh-dashak-7-samas-9",
+		"shrimat-dasbodh-dashak-7-samas-10"
+	]
 }

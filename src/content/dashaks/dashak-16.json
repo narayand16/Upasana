@@ -1,19 +1,19 @@
 {
-  "bookId": "shrimat-dasbodh",
-  "title": "Dashak 16",
-  "titleDevanagari": "दशक १६",
-  "number": 16,
-  "description": "The 16th chapter of Shrimat Dasbodh",
-  "samas": [
-    "shrimat-dasbodh-dashak-16-samas-1",
-    "shrimat-dasbodh-dashak-16-samas-2",
-    "shrimat-dasbodh-dashak-16-samas-3",
-    "shrimat-dasbodh-dashak-16-samas-4",
-    "shrimat-dasbodh-dashak-16-samas-5",
-    "shrimat-dasbodh-dashak-16-samas-6",
-    "shrimat-dasbodh-dashak-16-samas-7",
-    "shrimat-dasbodh-dashak-16-samas-8",
-    "shrimat-dasbodh-dashak-16-samas-9",
-    "shrimat-dasbodh-dashak-16-samas-10"
-  ]
+	"bookId": "shrimat-dasbodh",
+	"title": "Dashak 16",
+	"titleDevanagari": "दशक १६ - सप्ततिन्वय",
+	"number": 16,
+	"description": "सप्ततिन्वय",
+	"samas": [
+		"shrimat-dasbodh-dashak-16-samas-1",
+		"shrimat-dasbodh-dashak-16-samas-2",
+		"shrimat-dasbodh-dashak-16-samas-3",
+		"shrimat-dasbodh-dashak-16-samas-4",
+		"shrimat-dasbodh-dashak-16-samas-5",
+		"shrimat-dasbodh-dashak-16-samas-6",
+		"shrimat-dasbodh-dashak-16-samas-7",
+		"shrimat-dasbodh-dashak-16-samas-8",
+		"shrimat-dasbodh-dashak-16-samas-9",
+		"shrimat-dasbodh-dashak-16-samas-10"
+	]
 }
